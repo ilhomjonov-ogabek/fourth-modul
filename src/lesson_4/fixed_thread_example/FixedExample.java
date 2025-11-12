@@ -9,17 +9,14 @@ public class FixedExample {
 
     ExecutorService executor = Executors.newFixedThreadPool(10);
 
-
     for (int i = 1; i <= 100; i++) {
-      final int a =i;
-      Runnable runnable = () ->{
-        System.out.println(a+" - Thread name: "+Thread.currentThread().getName());
+      final int a = i;
+      Runnable runnable = () -> {
+        System.out.println(a + " - Thread name: " + Thread.currentThread().getName());
       };
       executor.execute(runnable);
     }
     executor.shutdown();
-
-
 
   }
 
